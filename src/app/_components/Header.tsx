@@ -3,7 +3,7 @@ import { ModeToggle } from "../../components/ui/theme-toggle";
 
 export default async function Header() {
   return (
-    <div className="flex items-center justify-center sticky top-0 left-0 right-0 ">
+    <div className="flex items-center justify-center sticky top-0 ">
       <div className="flex  ">
         <img src="./film.svg" alt="" />
         <p className="text-[#4338CA] italic font-bold">Movie Z</p>
@@ -13,11 +13,13 @@ export default async function Header() {
           <span className="text-14px font-medium">Genre</span>
           <ChevronDown />
         </button>
-        <input
-          type="text"
-          className=" px-3 py-2 bg-transparent text-[#A1A1A1] placeholder:text-[14px] rounded-lg "
-          placeholder="Search"
-        />
+        <div className="">
+          <input
+            type="text"
+            className=" px-3 py-2 bg-transparent text-[#A1A1A1] placeholder:text-[14px] rounded-lg "
+            placeholder="Search"
+          />
+        </div>
       </div>
       <ModeToggle />
     </div>
