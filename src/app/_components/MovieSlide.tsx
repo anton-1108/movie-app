@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { PlayIcon } from "lucide-react";
+import Image from "next/image";
 
 export async function CarouselDemo() {
   const nowPlayingResponse = await fetch(
@@ -24,20 +25,25 @@ export async function CarouselDemo() {
   );
   const nowPlayingData = await nowPlayingResponse.json();
   return (
-    <Carousel className="w-full max-w-xs" opts={{ loop: true }}>
+    <Carousel className="w-full" opts={{ loop: true }}>
       <CarouselContent>
         {nowPlayingData.results.slice(0, 10).map((d: MovieType) => {
           return (
             <CarouselItem key={d.id}>
               <Card className="relative">
                 <CardContent className="">
-                  {/* <image
-                  width={1000}
-                  height={1000}
-                  className="object-cover h-[620px] w-full relative"
-                  src={`https://image.tmdb.org/t/p/`+ "original"+`${d.backdrop_path}`}
-                  alt={{d.original_title}}
-                  ></image> */}
+                  <Image
+                    width={1000}
+                    height={1000}
+                    className="object-cover h-[620px] w-full relative"
+                    src={
+                      `https://image.tmdb.org/t/p/` +
+                      "original" +
+                      `${d.backdrop_path}`
+                    }
+                    alt=""
+                  />
+
                   <div className="absolute left-[140px] bottom-[158px] w-[302px] text-[#FAFAFA]">
                     <p className="">Now Playing:</p>
                     {d.original_title}
@@ -55,7 +61,7 @@ export async function CarouselDemo() {
                   </div>
                 </CardContent>
                 <CarouselPrevious className="absolute top-1/2 translate-y-1/2 left-11" />
-                <CarouselItem className="absolute top-1/2 translate-y-1/2 right-11" />
+                <CarouselNext className="absolute top-1/2 translate-y-1/2 right-11" />
               </Card>
             </CarouselItem>
           );

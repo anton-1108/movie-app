@@ -3,7 +3,7 @@ import { ModeToggle } from "../../components/ui/theme-toggle";
 
 export default async function Header() {
   return (
-    <div className="flex items-center justify-center sticky top-0 ">
+    <div className="flex items-center justify-center sticky top-0 bg-secondary">
       <div className="flex  ">
         <img src="./film.svg" alt="" />
         <p className="text-[#4338CA] italic font-bold">Movie Z</p>

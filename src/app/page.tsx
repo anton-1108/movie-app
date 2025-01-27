@@ -8,12 +8,10 @@ import { Upcoming } from "./_components/Upcoming";
 export default async function Home() {
   return (
     <div>
-      <Header />
       <CarouselDemo />
       <Upcoming />
       <Popular />
       <TopRated />
-      <Footer />
     </div>
   );
 }
