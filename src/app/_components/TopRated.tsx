@@ -19,7 +19,6 @@ export const TopRated = async () => {
       <div className=" flex justify-between">
         <h1 className="text-[24px] font-semibold">Top Rated</h1>
         <Link href="/category/top_rated">
-          {" "}
           See more <ArrowRight />
         </Link>
       </div>
