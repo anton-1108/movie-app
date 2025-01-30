@@ -35,7 +35,7 @@ export default async function MovieSlide(props: {
       <div className="flex justify-between">
         <div className="p-10">
           <p className="font-bold text-[36px]">{data?.original_title}</p>
-          <p className="text-[18px]">{data?.release_data}</p>
+          <p className="text-[18px]">{data?.release_date}</p>
         </div>
         <div>
           <p className="font-medium">Rating</p>
@@ -69,15 +69,29 @@ export default async function MovieSlide(props: {
         />
       </div>
       <div className="flex gap-[20px]">
-        {data?.genres?.map((genre) => (
+        {data?.genres?.map((genre: MovieType, index: number) => (
           <p
             className="border-[#E4E4E7] border-2 rounded-full p-[2px]"
             key={genre.id}
-          ></p>
+          >
+            {genre.name}
+          </p>
         ))}
       </div>
-      <div>
-        <p>{data?.overview}</p>
+      <div className="">
+        <p className="text-[#09090B]">{data?.overview}</p>
+      </div>
+      <div className="gap-5 flex ">
+        <p className="text-[#09090B] font-bold">Stars</p>
+        {type.cast?.slice(0, 5).map((actor: MovieType, index: number) => {
+          return <p key={index}>{actor.name}</p>;
+        })}
+      </div>
+      <div className="gap-5 flex">
+        <p className="text-[#09090B] font-bold">Director</p>
+        {type.crew.slice(0, 1).map((director: MovieType, index: number) => {
+          return <p key={index}>{director.name}</p>;
+        })}
       </div>
     </div>
   );

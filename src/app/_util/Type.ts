@@ -13,6 +13,9 @@ export type MovieType = {
   video: boolean;
   vote_average: number;
   vote_count: number;
+  actor: string;
+  name: string;
+  director: string;
 };
 
 export type GenreType = {
