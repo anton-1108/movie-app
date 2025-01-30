@@ -1,6 +1,7 @@
+import { Card } from "@/app/_components/Card";
 import { Token } from "@/app/_util/Constants.";
 import { MovieType } from "@/app/_util/Type";
-import { Card } from "@/components/ui/card";
+
 import { useState } from "react";
 const MoviePage = async ({
   params: { movietype },

@@ -14,3 +14,13 @@ export type MovieType = {
   vote_average: number;
   vote_count: number;
 };
+
+export type GenreType = {
+  id: number;
+  name: string;
+};
+
+export interface Genre {
+  id: number;
+  name: string;
+}

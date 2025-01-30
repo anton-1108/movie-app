@@ -1,5 +1,6 @@
 import { ChevronDown, Film } from "lucide-react";
 import { ModeToggle } from "../../components/ui/theme-toggle";
+import Genre from "./Genre";
 
 export default async function Header() {
   return (
@@ -9,10 +10,8 @@ export default async function Header() {
         <p className="text-[#4338CA] italic font-bold">Movie Z</p>
       </div>
       <div className="flex">
-        <button className="flex items-center px-4 py-2 broder border-[#27272A] border-solid rounded-md gap-2">
-          <span className="text-14px font-medium">Genre</span>
-          <ChevronDown />
-        </button>
+        <Genre />
+
         <div className="">
           <input
             type="text"
