@@ -20,7 +20,6 @@ const Genre = async () => {
     <Popover>
       <PopoverTrigger asChild>
         <Button variant="outline">
-          {" "}
           <ChevronDown />
           Genre
         </Button>

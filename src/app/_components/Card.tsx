@@ -39,7 +39,7 @@ export const Card = async ({
             <p className="truncate text-ellipsis ">{movie?.original_title}</p>
           </div>
         </div>
-      </div>{" "}
+      </div>
     </Link>
   );
 };

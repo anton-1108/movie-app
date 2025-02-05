@@ -1,5 +1,10 @@
 import { MovieType } from "@/app/_util/Type";
-import { Token } from "../../_util/Constants.";
+import { formatRuntime, Token } from "../../_util/Constants.";
+import Link from "next/link";
+import { ArrowRight, Play } from "lucide-react";
+import { MoreLike } from "@/app/_components/Morelike";
+import { Badge } from "@/components/ui/badge";
+import { DialogDemo } from "@/app/_components/Dialog";
 
 export default async function MovieSlide(props: {
   params: Promise<{ movieId: MovieType }>;
@@ -28,14 +33,39 @@ export default async function MovieSlide(props: {
       },
     }
   );
+  const Similar = await fetch(
+    `https://api.themoviedb.org/3/movie/${movieId}/similar?language=en-US&page=1`,
+    {
+      headers: {
+        Authorization: `Bearer ${Token}`,
+        "Content-Type": "application/json",
+      },
+    }
+  );
+  const trailer = await fetch(
+    `https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`,
+    {
+      headers: {
+        Authorization: `Bearer ${Token}`,
+        "Content-Type": "application/json",
+      },
+    }
+  );
+  const Trailer = await trailer.json();
+  console.log("tttttt", Trailer);
+
+  const Morelike = await Similar.json();
+  console.log("lhhvgvkjbbbk", Morelike);
   const type = await result.json();
   console.log("demo", type);
   return (
-    <div className="w-full flex-col items-center">
+    <div className="w-full max-w-[1080px] m-auto flex-col items-center">
       <div className="flex justify-between">
         <div className="p-10">
           <p className="font-bold text-[36px]">{data?.original_title}</p>
-          <p className="text-[18px]">{data?.release_date}</p>
+          <p className="text-[18px]">
+            {data?.release_date} PG {formatRuntime(data?.runtime)}
+          </p>
         </div>
         <div>
           <p className="font-medium">Rating</p>
@@ -67,15 +97,12 @@ export default async function MovieSlide(props: {
           alt=""
           className="w-[760px]"
         />
+        <DialogDemo id={data.id} />
       </div>
+
       <div className="flex gap-[20px]">
         {data?.genres?.map((genre: MovieType, index: number) => (
-          <p
-            className="border-[#E4E4E7] border-2 rounded-full p-[2px]"
-            key={genre.id}
-          >
-            {genre.name}
-          </p>
+          <Badge variant="outline">{genre.name}</Badge>
         ))}
       </div>
       <div className="">
@@ -92,6 +119,22 @@ export default async function MovieSlide(props: {
         {type.crew.slice(0, 1).map((director: MovieType, index: number) => {
           return <p key={index}>{director.name}</p>;
         })}
+      </div>
+      <div>
+        <div className="flex">
+          <h1 className="text-[24px] font-semibold">More like this</h1>
+          <Link href="/" className="flex  text-[14px] p-[8px]">
+            See more <ArrowRight />
+          </Link>
+        </div>
+
+        <div className="flex flex-wrap gap-5 ">
+          {Morelike.results
+            ?.slice(0, 5)
+            .map((result: MovieType, index: number) => {
+              return <MoreLike key={index} result={result} index={index} />;
+            })}
+        </div>
       </div>
     </div>
   );
