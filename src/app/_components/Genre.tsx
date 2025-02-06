@@ -5,11 +5,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { GenreType } from "../_util/Type";
-import { Card } from "./Card";
-import { ArrowRight, ChevronDown, ChevronRight } from "lucide-react";
-import { Toggle } from "@/components/ui/toggle";
-import Link from "next/link";
+import { ChevronDown, ChevronRight } from "lucide-react";
+
 import Allgenres from "./Allgenres";
 
 const Genre = async () => {

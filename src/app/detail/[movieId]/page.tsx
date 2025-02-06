@@ -99,26 +99,27 @@ export default async function MovieSlide(props: {
         />
         <DialogDemo id={data.id} />
       </div>
-
-      <div className="flex gap-[20px]">
-        {data?.genres?.map((genre: MovieType, index: number) => (
-          <Badge variant="outline">{genre.name}</Badge>
-        ))}
-      </div>
-      <div className="">
-        <p className="text-[#09090B]">{data?.overview}</p>
-      </div>
-      <div className="gap-5 flex ">
-        <p className="text-[#09090B] font-bold">Stars</p>
-        {type.cast?.slice(0, 5).map((actor: MovieType, index: number) => {
-          return <p key={index}>{actor.name}</p>;
-        })}
-      </div>
-      <div className="gap-5 flex">
-        <p className="text-[#09090B] font-bold">Director</p>
-        {type.crew.slice(0, 1).map((director: MovieType, index: number) => {
-          return <p key={index}>{director.name}</p>;
-        })}
+      <div className="gap-[20px]">
+        <div className="flex gap-[20px]">
+          {data?.genres?.map((genre: MovieType, index: number) => (
+            <Badge variant="outline">{genre.name}</Badge>
+          ))}
+        </div>
+        <div className="">
+          <p className="text-[#09090B]">{data?.overview}</p>
+        </div>
+        <div className="gap-5 flex border-t-2">
+          <p className="text-[#09090B] font-bold">Stars</p>
+          {type.cast?.slice(0, 5).map((actor: MovieType, index: number) => {
+            return <p key={index}>{actor.name}</p>;
+          })}
+        </div>
+        <div className="gap-5 flex border-t-2">
+          <p className="text-[#09090B] font-bold">Director</p>
+          {type.crew.slice(0, 1).map((director: MovieType, index: number) => {
+            return <p key={index}>{director.name}</p>;
+          })}
+        </div>
       </div>
       <div>
         <div className="flex">

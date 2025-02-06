@@ -19,7 +19,7 @@ export const Upcoming = async () => {
     <div className="flex flex-col w-[1280px] m-auto  ">
       <div className="flex justify-between">
         <h1 className="text-[24px] font-semibold">Upcoming</h1>
-        <Link href="/category/upcoming">
+        <Link href="/category/upcoming" className="flex">
           See more <ArrowRight />
         </Link>
       </div>

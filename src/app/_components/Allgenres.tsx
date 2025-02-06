@@ -12,7 +12,7 @@ const Allgenres = ({ genreMovies }: { genreMovies: GenreType[] }) => {
       <div className="flex flex-wrap gap-4">
         {genreMovies?.map((genre: GenreType, index: number) => {
           return (
-            <Link href={`/genre/${genre.id}`} key={genre.id}>
+            <Link href={`/genre?genreIds=${genre.id}`} key={genre.id}>
               <Toggle className="flex text-[12px] rounded-full border justify-center items-center border-[#27272A] py-[2px] px-[2px]">
                 {genre.name} <ChevronRight className=" w-4 h-4" />
               </Toggle>

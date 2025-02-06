@@ -20,7 +20,7 @@ export const Popular = async () => {
     <div className="flex flex-col w-[1280px] m-auto   ">
       <div className="flex justify-between">
         <h1 className="text-[24px] font-semibold">Popular</h1>
-        <Link href="/category/popular">
+        <Link href="/category/popular" className="flex">
           See more <ArrowRight />
         </Link>
       </div>
