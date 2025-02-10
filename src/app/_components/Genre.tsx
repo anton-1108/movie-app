@@ -21,7 +21,7 @@ const Genre = async () => {
           Genre
         </Button>
       </PopoverTrigger>
-      <PopoverContent>
+      <PopoverContent align="start" className="w-[577px] p-[20px]">
         <Allgenres genreMovies={genreMovies} />
       </PopoverContent>
     </Popover>

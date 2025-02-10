@@ -1,9 +1,10 @@
 import { Token } from "../_util/Constants.";
 import { Card } from "../_components/Card";
-import { MovieType } from "../_util/Type";
+import { GenreType, MovieType } from "../_util/Type";
 import Allgenres from "../_components/Allgenres";
 
 import response from "../_util/response";
+import { ToggleGroup, ToggleGroupItem } from "@radix-ui/react-toggle-group";
 
 export default async function Popular({ searchParams }: { searchParams: any }) {
   const { genreIds, page } = searchParams;
@@ -22,12 +23,18 @@ export default async function Popular({ searchParams }: { searchParams: any }) {
   const genreData = await response("/genre/movie/list?language=en");
   const genreMovies = genreData.genres;
   console.log("genre moveis", genreMovies);
+
+  //Handle genre selection
+
   return (
-    <div>
-      <p className="text-[30px]">Search filter</p>
-      <div className="flex gap-5">
-        <div className="">
-          <Allgenres genreMovies={genreMovies} />
+    <div className="max-w-[1280px] m-auto flex flex-col gap-8 ">
+      <p className="text-[30px] font-semibold">Search filter</p>
+
+      <div className="flex gap-7">
+        <div className="rounded-md w-[360px] h-[260px] border-none">
+          <div className="flex flex-wrap gap-4">
+            <Allgenres genreMovies={genreMovies} />
+          </div>
         </div>
         <div className="flex flex-wrap gap-12 justify-end  ">
           {data.results?.map((movie: MovieType, index: number) => {
