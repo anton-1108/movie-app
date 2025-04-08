@@ -110,11 +110,11 @@ const SearchInput = () => {
               <div className="w-[550px] h-[1.5px] my-1 dark:bg-gray-700 bg-[#efefef]"></div>
             </Link>
           ))}
-          <div>See all results for "{searchValue}"</div>
+          <div>See all results for {searchValue}</div>
         </div>
       ) : searchValue.length > 1 && searchResults.length === 0 ? (
         <div className="absolute mt-4 z-10 bg-white p-8">
-          <p>"Not Found"</p>
+          <p>Not Found</p>
         </div>
       ) : (
         ""

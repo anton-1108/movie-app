@@ -8,9 +8,6 @@ import { DialogDemo } from "@/app/_components/Dialog";
 
 export default async function MovieSlide(props: {
   params: Promise<{ movieId: MovieType }>;
-  //   params: { movieId },
-  // }: {
-  //   params: { movieId: string };
 }) {
   const { movieId } = await props.params;
   const response = await fetch(
@@ -102,7 +99,9 @@ export default async function MovieSlide(props: {
       <div className="gap-[20px`]">
         <div className="flex gap-[20px]">
           {data?.genres?.map((genre: MovieType) => (
-            <Badge variant="outline">{genre.name}</Badge>
+            <Badge key={genre.id} variant="outline">
+              {genre.name}
+            </Badge>
           ))}
         </div>
         <div className="">

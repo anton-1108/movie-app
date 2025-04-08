@@ -4,7 +4,7 @@ import { MovieType } from "../_util/Type";
 import Allgenres from "../_components/Allgenres";
 
 import response from "../_util/response";
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function Popular({ searchParams }: { searchParams: any }) {
   const { genreIds } = searchParams;
 

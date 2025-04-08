@@ -26,7 +26,7 @@ export const Popular = async () => {
       </div>
       <div className="flex flex-wrap  gap-5 justify-center  ">
         {data.results?.map((movie: MovieType, index: number) => {
-          return <Card movie={movie} index={index} />;
+          return <Card movie={movie} index={index} key={index} />;
         })}
       </div>
     </div>
