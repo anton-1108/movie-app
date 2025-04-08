@@ -1,4 +1,4 @@
-import { ArrowRight, CloudCog } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Token } from "../_util/Constants.";
 import { MovieType } from "../_util/Type";
 import { Card } from "./Card";

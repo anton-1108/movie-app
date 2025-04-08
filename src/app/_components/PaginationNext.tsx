@@ -1,14 +1,13 @@
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
 import { useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+
 interface CustomPaginationProps {
   page: number;
   totalPages: number;

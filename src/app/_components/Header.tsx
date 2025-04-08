@@ -1,4 +1,3 @@
-import { ChevronDown, Film } from "lucide-react";
 import { ModeToggle } from "../../components/ui/theme-toggle";
 import Genre from "./Genre";
 import Link from "next/link";

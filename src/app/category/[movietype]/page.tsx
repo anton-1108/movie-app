@@ -2,7 +2,6 @@ import { Card } from "@/app/_components/Card";
 import { Token } from "@/app/_util/Constants.";
 import { MovieType } from "@/app/_util/Type";
 
-import { useState } from "react";
 const MoviePage = async ({
   params: { movietype },
 }: {
@@ -26,7 +25,7 @@ const MoviePage = async ({
     <div className="flex flex-col w-[1280px] m-auto  ">
       <div className="flex flex-wrap  gap-5 justify-center  ">
         {data.results?.map((movie: MovieType, index: number) => {
-          return <Card movie={movie} index={index} />;
+          return <Card movie={movie} index={index} key={index} />;
         })}
       </div>
     </div>

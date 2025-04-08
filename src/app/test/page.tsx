@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import { Token } from "../_util/Constants.";
+
 import { MovieType } from "../_util/Type";
 import { Card } from "../_components/Card";
 import Link from "next/link";
@@ -17,7 +17,7 @@ const Upcoming = async () => {
       </div>
       <div className="flex flex-wrap  gap-5 justify-center  ">
         {data?.map((movie: MovieType, index: number) => {
-          return <Card movie={movie} index={index} />;
+          return <Card movie={movie} index={index} key={index} />;
         })}
       </div>
     </div>

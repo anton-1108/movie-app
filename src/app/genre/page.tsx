@@ -1,13 +1,12 @@
 import { Token } from "../_util/Constants.";
 import { Card } from "../_components/Card";
-import { GenreType, MovieType } from "../_util/Type";
+import { MovieType } from "../_util/Type";
 import Allgenres from "../_components/Allgenres";
 
 import response from "../_util/response";
-import { ToggleGroup, ToggleGroupItem } from "@radix-ui/react-toggle-group";
 
 export default async function Popular({ searchParams }: { searchParams: any }) {
-  const { genreIds, page } = searchParams;
+  const { genreIds } = searchParams;
 
   const res = await fetch(
     `https://api.themoviedb.org/3/discover/movie?language=en&with_genres=${genreIds}&page=1`,

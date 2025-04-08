@@ -1,7 +1,7 @@
 import { MovieType } from "@/app/_util/Type";
 import { formatRuntime, Token } from "../../_util/Constants.";
 import Link from "next/link";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { MoreLike } from "@/app/_components/Morelike";
 import { Badge } from "@/components/ui/badge";
 import { DialogDemo } from "@/app/_components/Dialog";
@@ -99,7 +99,7 @@ export default async function MovieSlide(props: {
         />
         <DialogDemo id={data.id} />
       </div>
-      <div className="gap-[20px]">
+      <div className="gap-[20px`]">
         <div className="flex gap-[20px]">
           {data?.genres?.map((genre: MovieType, index: number) => (
             <Badge variant="outline">{genre.name}</Badge>
