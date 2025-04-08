@@ -101,7 +101,7 @@ export default async function MovieSlide(props: {
       </div>
       <div className="gap-[20px`]">
         <div className="flex gap-[20px]">
-          {data?.genres?.map((genre: MovieType, index: number) => (
+          {data?.genres?.map((genre: MovieType) => (
             <Badge variant="outline">{genre.name}</Badge>
           ))}
         </div>
